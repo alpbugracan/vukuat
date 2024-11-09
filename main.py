@@ -1,12 +1,12 @@
 import streamlit as st
-from kisiler import fic_elemanlar, fic_normalciler, notam_elemanlar, notam_normalciler, aftn_elemanlar, aftn_normalciler
+from yeni_kisiler import elemanlar, ekip_cesit
 import fitz  
 from datetime import datetime, time, timedelta
 
 now = datetime.now()
 formatted_date = now.strftime("%d/%m/%Y")
 clock = now.time()
-check_clock = time(hour = 16)
+check_clock = time(hour = 19)
 next_day = now + timedelta(days=1)
 formatted_next_day = next_day.strftime('%d/%m/%Y')
 
@@ -21,12 +21,9 @@ SIFRE = 'htkmfic'
 if "dogrulandi" not in st.session_state:
     st.session_state.dogrulandi = False
 
-# Şifre kontrolü
 if not st.session_state.dogrulandi:
-    # Şifre giriş alanı
     sifre = st.text_input("Lütfen şifreyi girin:", type="password")
 
-    # Kullanıcı şifreyi girip 'Enter'a bastığında kontrol ederiz
     if sifre == SIFRE:
         st.session_state.dogrulandi = True
         st.success("Şifre doğru! İçeriği yüklemek için buraya tıklayın.")
@@ -36,30 +33,22 @@ else:
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        ofis = st.radio('Ofis', options=['fic', 'notam', 'aftn'])
-
-    if ofis == 'fic':
-        elemanlar = fic_elemanlar
-        normalciler = fic_normalciler
-    elif ofis == 'notam':
-        elemanlar = notam_elemanlar
-        normalciler = notam_normalciler
-    else:
-        elemanlar = aftn_elemanlar
-        normalciler = aftn_normalciler
+        ofis = st.radio('Ofis', options=['FIC', 'NOTAM', 'AFTN'])
+        
     
     with col2:
-        ekip = st.radio('Ekip', options=elemanlar.keys())
+        ekip = st.radio('Ekip', options=ekip_cesit)
         st.write('<div style="height:20px;"></div>', unsafe_allow_html=True) 
 
-    mevcut_elemanlar = elemanlar[ekip][:]
-    mevcut_normalciler = normalciler[:]
+
+    elemanlarr = sorted([item for item in elemanlar if item['ofis'] == ofis and item['ekip'] == ekip], key=lambda x: x['numara'])
+    gunasiricilar = [item for item in elemanlar if item['ofis'] == ofis and item['gorev'] == 'gunasiri' and (ekip in item['ekipler'])]
     eksikler = []
     sebepler = []
 
     if gunduz:
-        tam_elemanlar = elemanlar[ekip][:]
-        mevcut_elemanlar = elemanlar[ekip][:]
+        tam_elemanlar = elemanlarr[:] + gunasiricilar
+        mevcut_elemanlar = elemanlarr[:] + gunasiricilar
         start_time = f'{formatted_date} - 05:30 UTC'
         end_time = f'{formatted_date} - 17:00 UTC'
         start_hour = '05:30 UTC'
@@ -70,13 +59,18 @@ else:
         
         if vardiya == 'Var':
             normal = True
+            tam_normalciler = sorted([item for item in elemanlar if item['gorev'] == 'normal' and item['ofis'] == ofis], key=lambda x: x['numara'])
+            mevcut_normalciler = sorted([item for item in elemanlar if item['gorev'] == 'normal' and item['ofis'] == ofis], key=lambda x: x['numara'])
     else:
-        tam_elemanlar = elemanlar[ekip][:-1]
-        mevcut_elemanlar = elemanlar[ekip][:-1]
+        tam_elemanlar = elemanlarr[:]
+        mevcut_elemanlar = elemanlarr[:]
         start_time = f'{formatted_date} - 16:30 UTC'
         end_time = f'{formatted_next_day} - 06:00 UTC'
         start_hour = '16:30 UTC'
         end_hour = '06:00 UTC'
+
+        with col3:
+            st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
 
     with col1:
         st.write('')
@@ -86,7 +80,7 @@ else:
     with col1:
         st.write("Ekipten kimler eksik?")
         for eleman in tam_elemanlar:
-            if st.checkbox(eleman[0], key=f'{eleman[1]}'):
+            if st.checkbox(eleman['isim'], key=f'{eleman['init']}_{eleman['isim']}'):
                 eksikler.append(eleman)
                 mevcut_elemanlar.remove(eleman)
             
@@ -96,14 +90,14 @@ else:
                 st.write('')
                 st.write('<div style="height:70px;"></div>', unsafe_allow_html=True) 
                 for eleman in eksikler:
-                    sebep = st.selectbox(f"{eleman[0]} gelmeme sebebi:", 
+                    sebep = st.selectbox(f"{eleman['isim']} gelmeme sebebi:", 
                                     ["SENELİK İZİNLİ", 
                                         "MAZERET İZİNLİ", 
                                         "RAPORLU",
                                         "HARİÇTE GÖREVLİ",
                                         'HASTANEDE',
                                         'İDARİ İZİNLİ',
-                                        'NÖBET İZİNLİ'], key=f"{eleman[0]}_sebep")
+                                        'NÖBET İZİNLİ'], key=f"{eleman['init']}_{eleman['isim']}_sebep")
                     sebepler.append(sebep)
 
 
@@ -114,8 +108,8 @@ else:
     if normal:
         with col2:
             st.write("Normalcilerden kimler eksik?")
-            for normalci in normalciler:
-                if st.checkbox(normalci[0], key=f'{normalci[1]}'):
+            for normalci in tam_normalciler:
+                if st.checkbox(normalci['isim'], key=f'{normalci['init']}_{normalci['isim']}'):
                     #eksikler.append(eleman)
                     mevcut_normalciler.remove(normalci)
 
@@ -137,28 +131,34 @@ else:
     page.draw_rect((delx11, dely11, delx22, dely22), color=(1, 1, 1), fill=(1, 1, 1))
 
 
-    #SABİT BÖLÜM
+
     htkm = 'HTKM'
     x_htkm = 255
     y_htkm = 90  
     page.insert_text((x_htkm, y_htkm), htkm, fontsize=14, fontname="Calibrib", fontfile = font_path_bold,color=(0, 0, 0))
 
-    fic = 'AIM/FIC'
-    x_fic = 433
-    y_fic = 90  
-    page.insert_text((x_fic, y_fic), fic, fontsize=14, fontname="Calibrib", fontfile = font_path_bold, color=(0, 0, 0))
 
-        # ekip 
+    aim_ofis = f'AIM/{ofis}'
+    if ofis == 'FIC':
+        x_fic = 433
+    elif ofis == 'NOTAM':
+        x_fic = 424
+    else:
+        x_fic = 428
+    
+    y_fic = 90  
+    page.insert_text((x_fic, y_fic), aim_ofis, fontsize=12, fontname="Calibrib", fontfile = font_path_bold, color=(0, 0, 0))
+
+
     x_ekip = 533
     y_ekip = 90  
     page.insert_text((x_ekip, y_ekip), ekip, fontsize=14, fontname="Calibrib", fontfile = font_path_bold, color=(0, 0, 0))
 
-        # baslangic
     x1 = 185
     y1 = 115  
     page.insert_text((x1, y1), start_time, fontsize=12, fontname="Calibrib", fontfile = font_path_bold, color=(0, 0, 0))
 
-        # bitis
+
     x1 = 455
     y1 = 115  
     page.insert_text((x1, y1), end_time, fontsize=12, fontname="Calibrib", fontfile = font_path_bold, color=(0, 0, 0))
@@ -166,15 +166,15 @@ else:
 
     eleman_counter = 0
     for eleman in mevcut_elemanlar:
-        name = eleman[0]
-        init = eleman[1]
+        name = eleman['isim']
+        init = eleman['init']
         hours = f'{start_hour[:-4]}    {end_hour[:-4]}'
         x = 116
         x_init = x + 121
         x_hour = x - 68
         y = 170 + 43*eleman_counter
         name_font = 12
-        if eleman[2] == True:
+        if eleman['uzunisim'] == True:
             name_font = 10
         page.insert_text((x, y), name, fontsize=name_font, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
         page.insert_text((x_init, y), init, fontsize=12, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
@@ -183,19 +183,18 @@ else:
 
         eleman_counter += 1
 
-    # NORMALCİLER
     if normal:
         normal_counter = 0
         for normalci in mevcut_normalciler:
-            name = normalci[0]
-            init = normalci[1]
+            name = normalci['isim']
+            init = normalci['init']
             hours = f'05:30    14:00'
             x = 385
             x_init = x + 113
             x_hour = x - 68
             y = 170 + 43*normal_counter
             name_font = 12
-            if normalci[2] == True:
+            if normalci['uzunisim'] == True:
                 name_font = 10
             page.insert_text((x, y), name, fontsize=name_font, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
             page.insert_text((x_init, y), init, fontsize=12, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
@@ -205,7 +204,7 @@ else:
 
 
     for i, eksik in enumerate(eksikler):
-        name = eksik[0]
+        name = eksik['isim']
         sebep = sebepler[i]
         mazeret = f'{name} ({sebep})'
         x = 48
@@ -213,7 +212,7 @@ else:
         page.insert_text((x, y), mazeret, fontsize=12, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
 
     page2 = pdf_document[1]
-    ekip_sefi = mevcut_elemanlar[0][0]
+    ekip_sefi = mevcut_elemanlar[0]['isim']
     x = 25
     y = 727
     page2.insert_text((x, y), ekip_sefi, fontsize=14, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
@@ -227,6 +226,8 @@ else:
         pdf_bytes = pdf_file.read()
         with col2:
             st.write('<div style="height:150px;"></div>', unsafe_allow_html=True) 
+            if not gunduz or not normal:
+                st.write('<div style="height:162px;"></div>', unsafe_allow_html=True) 
             st.download_button(
                 label="Vukuat Formunu İndir",
                 data=pdf_bytes,
