@@ -448,7 +448,7 @@ elemanlar = [
      'numara' : 5,
      'uzunisim' : False
      },
-
+    
      {'isim': 'NALAN TÜMER',
      'init': 'NT',
      'ofis': 'NOTAM',
@@ -478,6 +478,180 @@ elemanlar = [
      'numara' : None,
      'uzunisim' : False
      },
+
+     {'isim': 'ERSAN KAYA',
+     'init': 'EK',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'A',
+     'ekipler' : None,
+     'numara' : 1,
+     'uzunisim' : False
+     },
+
+     {'isim': 'DAMLA ÖZBAKIR',
+     'init': 'DO',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'A',
+     'ekipler' : None,
+     'numara' : 2,
+     'uzunisim' : False
+     },
+
+     {'isim': 'UĞRAŞ ÇALIŞKAN',
+     'init': 'UC',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'A',
+     'ekipler' : None,
+     'numara' : 3,
+     'uzunisim' : False
+     },
+
+     {'isim': 'NİLGÜN KOÇ',
+     'init': 'NK',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'A',
+     'ekipler' : None,
+     'numara' : 4,
+     'uzunisim' : False
+     },
+
+     {'isim': 'FATİH KORUKLUOĞLU',
+     'init': 'FK',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'B',
+     'ekipler' : None,
+     'numara' : 1,
+     'uzunisim' : False
+     },
+
+     {'isim': 'AYŞEGÜL S. PARTAL',
+     'init': 'AP',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'B',
+     'ekipler' : None,
+     'numara' : 2,
+     'uzunisim' : False
+     },
+
+     {'isim': 'ALPER AFŞAR',
+     'init': 'AF',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'B',
+     'ekipler' : None,
+     'numara' : 3,
+     'uzunisim' : False
+     },
+
+     {'isim': 'BARAN DİNÇ',
+     'init': 'BI',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'B',
+     'ekipler' : None,
+     'numara' : 4,
+     'uzunisim' : False
+     },
+
+     {'isim': 'TAYFUN GÜNEY',
+     'init': 'TG',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'C',
+     'ekipler' : None,
+     'numara' : 1,
+     'uzunisim' : False
+     },
+
+     {'isim': 'BURCU C. ERÖZ',
+     'init': 'BC',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'C',
+     'ekipler' : None,
+     'numara' : 2,
+     'uzunisim' : False
+     },
+
+     {'isim': 'AYHAN SÖNMEZ',
+     'init': 'AE',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'C',
+     'ekipler' : None,
+     'numara' : 3,
+     'uzunisim' : False
+     },
+
+     {'isim': 'YÜKSEL TAK',
+     'init': 'YD',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'C',
+     'ekipler' : None,
+     'numara' : 4,
+     'uzunisim' : False
+     },
+
+     {'isim': 'BİLGİ PEKER',
+     'init': 'BP',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 1,
+     'uzunisim' : False
+     },
+
+     {'isim': 'NEVİN BOZLAR',
+     'init': 'NB',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 2,
+     'uzunisim' : False
+     },
+
+     {'isim': 'EGEMEN ÖZSÜER',
+     'init': 'EO',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 3,
+     'uzunisim' : False
+     },
+
+     {'isim': 'İLHAN CİHAN',
+     'init': 'IN',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 4,
+     'uzunisim' : False
+     },
+
+     {'isim': 'MURAT İŞLER',
+     'init': 'MI',
+     'ofis': 'AFTN',
+     'gorev': 'gunasiri',
+     'ekip' : None,
+     'ekipler' : ['A', 'C'],
+     'numara' : None,
+     'uzunisim' : False
+     },
+
+
+
+
 ]
 
 ekip_cesit = ['A', 'B', 'C', 'D']

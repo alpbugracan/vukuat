@@ -1,7 +1,8 @@
 import streamlit as st
 from yeni_kisiler import elemanlar, ekip_cesit
 import fitz  
-from datetime import datetime, time, timedelta
+from datetime import datetime, time, timedelta, date
+
 
 now = datetime.now()
 formatted_date = now.strftime("%d/%m/%Y")
@@ -10,8 +11,14 @@ check_clock = time(hour = 16)
 next_day = now + timedelta(days=1)
 formatted_next_day = next_day.strftime('%d/%m/%Y')
 
+
+
 normal = False
 gunduz = True
+
+ileri_gunduz = True
+ileri_tarih = now.strftime("%d/%m/%Y")
+ileri_next_day = now.strftime("%d/%m/%Y")
 
 if clock > check_clock:
     gunduz = False
@@ -30,7 +37,49 @@ if not st.session_state.dogrulandi:
     elif sifre:
         st.error("Yanlış şifre! Tekrar deneyin.")
 else:
-    col1, col2, col3 = st.columns(3)
+
+    col1, col2, col3, col4 = st.columns([2.4,3,3.2,2])
+
+    if "button_text" not in st.session_state:
+        st.session_state.button_text = "Özel tarih gir"
+    if "ileri" not in st.session_state:
+        st.session_state.ileri = False
+    if "show_date_picker" not in st.session_state:
+        st.session_state.show_date_picker = False
+    if 'gunduz_gece' not in st.session_state:
+        st.session_state.gunduz_gece = False
+
+    def toggle_button():
+    
+        st.session_state.ileri = not st.session_state.ileri
+    
+        if st.session_state.ileri:
+            st.session_state.button_text = "Oto tarihe dön"
+            st.session_state.show_date_picker = True
+            st.session_state.gunduz_gece = True
+        else:
+            st.session_state.button_text = "Özel tarih gir"
+            st.session_state.show_date_picker = False
+            st.session_state.gunduz_gece = False
+
+    with col4:
+        if st.button(st.session_state.button_text, on_click=toggle_button):
+            pass  
+
+    
+        if st.session_state.show_date_picker:
+            ileri_tarih = st.date_input("Bir tarih seçin", value=date.today())
+            ileri_next_day = ileri_tarih + timedelta(days=1)
+        
+        if st.session_state.gunduz_gece:
+            ileri_gun_gece = st.radio('nöbet', options=['gündüz', 'gece'])
+            if ileri_gun_gece == 'gece':
+                ileri_gunduz = False
+                print(ileri_gunduz)
+            else:
+                ileri_gunduz = True
+                print(ileri_gunduz)
+            
 
     with col1:
         ofis = st.radio('Ofis', options=['FIC', 'NOTAM', 'AFTN'])
@@ -40,37 +89,65 @@ else:
         ekip = st.radio('Ekip', options=ekip_cesit)
         st.write('<div style="height:20px;"></div>', unsafe_allow_html=True) 
 
+    
 
     elemanlarr = sorted([item for item in elemanlar if item['ofis'] == ofis and item['ekip'] == ekip], key=lambda x: x['numara'])
     gunasiricilar = [item for item in elemanlar if item['ofis'] == ofis and item['gorev'] == 'gunasiri' and (ekip in item['ekipler'])]
     eksikler = []
     sebepler = []
 
-    if gunduz:
-        tam_elemanlar = elemanlarr[:] + gunasiricilar
-        mevcut_elemanlar = elemanlarr[:] + gunasiricilar
-        start_time = f'{formatted_date} - 05:30 UTC'
-        end_time = f'{formatted_date} - 17:00 UTC'
-        start_hour = '05:30 UTC'
-        end_hour = '17:00 UTC'
+    if st.session_state.ileri:
+        if ileri_gunduz:
+            tam_elemanlar = elemanlarr[:] + gunasiricilar
+            mevcut_elemanlar = elemanlarr[:] + gunasiricilar
+            start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 05:30 UTC'
+            end_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 17:00 UTC'
+            start_hour = '05:30 UTC'
+            end_hour = '17:00 UTC'
 
-        with col3:
-            vardiya = st.radio('Normalciler', options=['Var', 'Yok'])
-        
-        if vardiya == 'Var':
-            normal = True
-            tam_normalciler = sorted([item for item in elemanlar if item['gorev'] == 'normal' and item['ofis'] == ofis], key=lambda x: x['numara'])
-            mevcut_normalciler = sorted([item for item in elemanlar if item['gorev'] == 'normal' and item['ofis'] == ofis], key=lambda x: x['numara'])
-    else:
-        tam_elemanlar = elemanlarr[:]
-        mevcut_elemanlar = elemanlarr[:]
-        start_time = f'{formatted_date} - 16:30 UTC'
-        end_time = f'{formatted_next_day} - 06:00 UTC'
-        start_hour = '16:30 UTC'
-        end_hour = '06:00 UTC'
+            with col3:
+                vardiya = st.radio('Normalciler', options=['Var', 'Yok'])
+            
+            if vardiya == 'Var':
+                normal = True
+                tam_normalciler = sorted([item for item in elemanlar if item['gorev'] == 'normal' and item['ofis'] == ofis], key=lambda x: x['numara'])
+                mevcut_normalciler = sorted([item for item in elemanlar if item['gorev'] == 'normal' and item['ofis'] == ofis], key=lambda x: x['numara'])
+        else:
+            tam_elemanlar = elemanlarr[:]
+            mevcut_elemanlar = elemanlarr[:]
+            start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:30 UTC'
+            end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 06:00 UTC'
+            start_hour = '16:30 UTC'
+            end_hour = '06:00 UTC'
 
-        with col3:
-            st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
+            with col3:
+                st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
+    else:    
+        if gunduz:
+            tam_elemanlar = elemanlarr[:] + gunasiricilar
+            mevcut_elemanlar = elemanlarr[:] + gunasiricilar
+            start_time = f'{formatted_date} - 05:30 UTC'
+            end_time = f'{formatted_date} - 17:00 UTC'
+            start_hour = '05:30 UTC'
+            end_hour = '17:00 UTC'
+
+            with col3:
+                vardiya = st.radio('Normalciler', options=['Var', 'Yok'])
+            
+            if vardiya == 'Var':
+                normal = True
+                tam_normalciler = sorted([item for item in elemanlar if item['gorev'] == 'normal' and item['ofis'] == ofis], key=lambda x: x['numara'])
+                mevcut_normalciler = sorted([item for item in elemanlar if item['gorev'] == 'normal' and item['ofis'] == ofis], key=lambda x: x['numara'])
+        else:
+            tam_elemanlar = elemanlarr[:]
+            mevcut_elemanlar = elemanlarr[:]
+            start_time = f'{formatted_date} - 16:30 UTC'
+            end_time = f'{formatted_next_day} - 06:00 UTC'
+            start_hour = '16:30 UTC'
+            end_hour = '06:00 UTC'
+
+            with col3:
+                st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
 
     with col1:
         st.write('')
@@ -78,11 +155,11 @@ else:
         st.write('<div style="height:30px;"></div>', unsafe_allow_html=True) 
 
     with col1:
-        st.write("Ekipten kimler eksik?")
+        st.write("Ekipten kim eksik?")
         for eleman in tam_elemanlar:
             if st.checkbox(eleman['isim'], key=f'{eleman['init']}_{eleman['isim']}'):
                 eksikler.append(eleman)
-                mevcut_elemanlar.remove(eleman)
+                
             
 
     if eksikler:
@@ -96,9 +173,25 @@ else:
                                         "RAPORLU",
                                         "HARİÇTE GÖREVLİ",
                                         'HASTANEDE',
+                                        'SAATLİK İZİNLİ',
                                         'İDARİ İZİNLİ',
-                                        'NÖBET İZİNLİ'], key=f"{eleman['init']}_{eleman['isim']}_sebep")
-                    sebepler.append(sebep)
+                                        'NÖBET İZİNLİ',
+                                        'BABALIK İZİNLİ',
+                                        'EVLİLİK İZİNLİ',
+                                        'ÖLÜM İZİNLİ'], key=f"{eleman['init']}_{eleman['isim']}_sebep")
+                    if sebep == 'SAATLİK İZİNLİ':
+                        
+                        ccol1, ccol2 = st.columns(2) 
+                        with ccol1:
+                            #izin_baslangic = st.text_input('başlangıç', key=f'{eleman['isim']}_{eleman['init']}_basla')
+                            izin_baslangic = st.time_input('başlangıç', value=time(12,0))
+                        with ccol2:
+                            #izin_bitis = st.text_input('bitiş       UTC', key=f'{eleman['isim']}_{eleman['init']}_bitis')
+                            izin_bitis = st.time_input('bitiş   UTC', value=time(12,0))
+                        sebepler.append(f'{sebep} {izin_baslangic.strftime("%H:%M")} - {izin_bitis.strftime("%H:%M")}')
+                    else:
+                        mevcut_elemanlar.remove(eleman)
+                        sebepler.append(sebep)
 
 
     with col2:
@@ -107,7 +200,7 @@ else:
 
     if normal:
         with col2:
-            st.write("Normalcilerden kimler eksik?")
+            st.write("Normalcilerden kim eksik?")
             for normalci in tam_normalciler:
                 if st.checkbox(normalci['isim'], key=f'{normalci['init']}_{normalci['isim']}'):
                     #eksikler.append(eleman)
@@ -225,9 +318,12 @@ else:
     with open(output_pdf_path, "rb") as pdf_file:
         pdf_bytes = pdf_file.read()
         with col2:
-            st.write('<div style="height:150px;"></div>', unsafe_allow_html=True) 
+            if normal:
+                normalci_sayisi = len(tam_normalciler)
+                custom_px = 312 - (normalci_sayisi + 1) * 40.5
+                st.write(f'<div style="height:{custom_px}px;"></div>', unsafe_allow_html=True) 
             if not gunduz or not normal:
-                st.write('<div style="height:162px;"></div>', unsafe_allow_html=True) 
+                st.write('<div style="height:312px;"></div>', unsafe_allow_html=True) 
             st.download_button(
                 label="Vukuat Formunu İndir",
                 data=pdf_bytes,
