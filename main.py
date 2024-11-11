@@ -7,7 +7,7 @@ from datetime import datetime, time, timedelta, date
 now = datetime.now()
 formatted_date = now.strftime("%d/%m/%Y")
 clock = now.time()
-check_clock = time(hour = 16)
+check_clock = time(hour = 19)
 next_day = now + timedelta(days=1)
 formatted_next_day = next_day.strftime('%d/%m/%Y')
 
@@ -313,6 +313,16 @@ else:
     pdf_document.save(output_pdf_path)
     pdf_document.close()
 
+    print_date = formatted_date
+    if st.session_state.ileri:
+        print_date = ileri_tarih.strftime("%d/%m/%Y")
+
+    zaman = ''
+    if gunduz or ileri_gunduz:
+        zaman = 'Gunduz'
+    else:
+        zaman = 'Gece'
+
 
     with open(output_pdf_path, "rb") as pdf_file:
         pdf_bytes = pdf_file.read()
@@ -326,7 +336,7 @@ else:
             st.download_button(
                 label="Vukuat Formunu İndir",
                 data=pdf_bytes,
-                file_name=f"{ekip}_Ekibi_{formatted_date}_Vukuat.pdf",
+                file_name=f"{ofis}_{ekip}_Ekibi_{print_date}_{zaman}_Vukuat.pdf",
                 mime="application/pdf"
             )
 
