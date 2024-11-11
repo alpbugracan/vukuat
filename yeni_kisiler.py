@@ -647,11 +647,7 @@ elemanlar = [
      'ekipler' : ['A', 'C'],
      'numara' : None,
      'uzunisim' : False
-     },
-
-
-
-
+     }
 ]
 
 ekip_cesit = ['A', 'B', 'C', 'D']
