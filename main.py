@@ -7,7 +7,7 @@ from datetime import datetime, time, timedelta, date
 now = datetime.now()
 formatted_date = now.strftime("%d/%m/%Y")
 clock = now.time()
-check_clock = time(hour = 19)
+check_clock = time(hour = 16)
 next_day = now + timedelta(days=1)
 formatted_next_day = next_day.strftime('%d/%m/%Y')
 
