@@ -12,7 +12,6 @@ next_day = now + timedelta(days=1)
 formatted_next_day = next_day.strftime('%d/%m/%Y')
 
 
-
 normal = False
 gunduz = True
 
