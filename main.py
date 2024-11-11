@@ -7,7 +7,7 @@ from datetime import datetime, time, timedelta, date
 now = datetime.now()
 formatted_date = now.strftime("%d/%m/%Y")
 clock = now.time()
-check_clock = time(hour = 16)
+check_clock = time(hour = 19)
 next_day = now + timedelta(days=1)
 formatted_next_day = next_day.strftime('%d/%m/%Y')
 
@@ -114,10 +114,21 @@ else:
         else:
             tam_elemanlar = elemanlarr[:]
             mevcut_elemanlar = elemanlarr[:]
-            start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:30 UTC'
-            end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 06:00 UTC'
-            start_hour = '16:30 UTC'
-            end_hour = '06:00 UTC'
+            if ofis == 'FIC':
+                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:30 UTC'
+                end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 06:00 UTC'
+                start_hour = '16:30 UTC'
+                end_hour = '06:00 UTC'
+            elif ofis == 'NOTAM':
+                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 17:00 UTC'
+                end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 05:30 UTC'
+                start_hour = '17:00 UTC'
+                end_hour = '05:30 UTC'
+            else:
+                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 17:00 UTC'
+                end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 06:00 UTC'
+                start_hour = '17:00 UTC'
+                end_hour = '06:00 UTC'
 
             with col3:
                 st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
@@ -140,10 +151,21 @@ else:
         else:
             tam_elemanlar = elemanlarr[:]
             mevcut_elemanlar = elemanlarr[:]
-            start_time = f'{formatted_date} - 16:30 UTC'
-            end_time = f'{formatted_next_day} - 06:00 UTC'
-            start_hour = '16:30 UTC'
-            end_hour = '06:00 UTC'
+            if ofis == 'FIC':
+                start_time = f'{formatted_date} - 16:30 UTC'
+                end_time = f'{formatted_next_day} - 06:00 UTC'
+                start_hour = '16:30 UTC'
+                end_hour = '06:00 UTC'
+            elif ofis == 'NOTAM':
+                start_time = f'{formatted_date} - 17:00 UTC'
+                end_time = f'{formatted_next_day} - 05:30 UTC'
+                start_hour = '17:00 UTC'
+                end_hour = '05:30 UTC'
+            else:
+                start_time = f'{formatted_date} - 17:00 UTC'
+                end_time = f'{formatted_next_day} - 06:00 UTC'
+                start_hour = '17:00 UTC'
+                end_hour = '06:00 UTC'
 
             with col3:
                 st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
