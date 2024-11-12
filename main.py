@@ -353,7 +353,7 @@ else:
                 normalci_sayisi = len(tam_normalciler)
                 custom_px = 312 - (normalci_sayisi + 1) * 40.5
                 st.write(f'<div style="height:{custom_px}px;"></div>', unsafe_allow_html=True) 
-            if not gunduz or not normal:
+            else:
                 st.write('<div style="height:312px;"></div>', unsafe_allow_html=True) 
             st.download_button(
                 label="Vukuat Formunu İndir",
