@@ -7,9 +7,11 @@ from datetime import datetime, time, timedelta, date
 now = datetime.now()
 formatted_date = now.strftime("%d/%m/%Y")
 clock = now.time()
-check_clock = time(hour = 16)
+check_clock = time(hour = 19)
 next_day = now + timedelta(days=1)
 formatted_next_day = next_day.strftime('%d/%m/%Y')
+# old_today_b_gun_a_gece = datetime(2024, 11, 15, 5, 00) # 15 Kasım 2024 05:00
+
 
 
 normal = False
@@ -81,7 +83,7 @@ else:
             
 
     with col1:
-        ofis = st.radio('Ofis', options=['FIC', 'NOTAM', 'AFTN'])
+        ofis = st.radio('Ofis', options=['FIC', 'NOTAM', 'AFTN', 'ESB'])
         
     
     with col2:
@@ -119,7 +121,7 @@ else:
                 end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 06:00 UTC'
                 start_hour = '16:30 UTC'
                 end_hour = '06:00 UTC'
-            elif ofis == 'NOTAM':
+            elif ofis == 'NOTAM'or ofis == 'ESB':
                 start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 17:00 UTC'
                 end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 05:30 UTC'
                 start_hour = '17:00 UTC'
@@ -156,7 +158,7 @@ else:
                 end_time = f'{formatted_next_day} - 06:00 UTC'
                 start_hour = '16:30 UTC'
                 end_hour = '06:00 UTC'
-            elif ofis == 'NOTAM':
+            elif ofis == 'NOTAM' or ofis == 'ESB':
                 start_time = f'{formatted_date} - 17:00 UTC'
                 end_time = f'{formatted_next_day} - 05:30 UTC'
                 start_hour = '17:00 UTC'
@@ -171,9 +173,8 @@ else:
                 st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
 
     with col1:
-        st.write('')
-        st.write('')
-        st.write('<div style="height:30px;"></div>', unsafe_allow_html=True) 
+        
+        st.write('<div style="height:36.5px;"></div>', unsafe_allow_html=True) 
 
     with col1:
         st.write("Ekipten kim eksik?")
@@ -245,20 +246,26 @@ else:
     page.draw_rect((delx11, dely11, delx22, dely22), color=(1, 1, 1), fill=(1, 1, 1))
 
 
-
-    htkm = 'HTKM'
-    x_htkm = 255
+    if ofis == 'ESB':
+        htkm = 'ESENBOĞA'
+        x_htkm = 240
+    else:
+        htkm = 'HTKM'
+        x_htkm = 255
     y_htkm = 90  
     page.insert_text((x_htkm, y_htkm), htkm, fontsize=14, fontname="Calibrib", fontfile = font_path_bold,color=(0, 0, 0))
 
-
-    aim_ofis = f'AIM/{ofis}'
-    if ofis == 'FIC':
-        x_fic = 433
-    elif ofis == 'NOTAM':
-        x_fic = 424
-    else:
-        x_fic = 428
+    if ofis == 'ESB':
+        aim_ofis = 'AIM'
+        x_fic = 447
+    else:    
+        aim_ofis = f'AIM/{ofis}'
+        if ofis == 'FIC':
+            x_fic = 433
+        elif ofis == 'NOTAM':
+            x_fic = 424
+        else:
+            x_fic = 428
     
     y_fic = 90  
     page.insert_text((x_fic, y_fic), aim_ofis, fontsize=12, fontname="Calibrib", fontfile = font_path_bold, color=(0, 0, 0))
@@ -353,6 +360,7 @@ else:
                 normalci_sayisi = len(tam_normalciler)
                 custom_px = 312 - (normalci_sayisi + 1) * 40.5
                 st.write(f'<div style="height:{custom_px}px;"></div>', unsafe_allow_html=True) 
+            #if not gunduz or not normal or not ileri_gunduz:
             else:
                 st.write('<div style="height:312px;"></div>', unsafe_allow_html=True) 
             st.download_button(
