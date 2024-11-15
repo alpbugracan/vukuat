@@ -7,7 +7,7 @@ from datetime import datetime, time, timedelta, date
 now = datetime.now()
 formatted_date = now.strftime("%d/%m/%Y")
 clock = now.time()
-check_clock = time(hour = 19)
+check_clock = time(hour = 16)
 next_day = now + timedelta(days=1)
 formatted_next_day = next_day.strftime('%d/%m/%Y')
 # old_today_b_gun_a_gece = datetime(2024, 11, 15, 5, 00) # 15 Kasım 2024 05:00
