@@ -899,8 +899,15 @@ elemanlar = [
      'uzunisim' : False
      },
 
-
-
+     {'isim': 'ÖMER FARUK AVCU',
+     'init': 'OF',
+     'ofis': 'ESB',
+     'gorev': 'normal',
+     'ekip' : None,
+     'ekipler' : None,
+     'numara': 1,
+     'uzunisim' : False
+     }
 
 ]
 

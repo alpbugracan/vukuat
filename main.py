@@ -338,6 +338,14 @@ else:
     y = 727
     page2.insert_text((x, y), ekip_sefi, fontsize=14, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
 
+    if ofis == 'ESB':
+        x_sef = 25
+        y_sef = 790
+        x_mudur = 293
+        y_mudur = 790
+        page2.insert_text((x_sef, y_sef), 'YAVUZ USTA', fontsize=14, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
+        page2.insert_text((x_mudur, y_mudur), 'ENVER YERLİ', fontsize=14, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
+
     output_pdf_path = "guncellenmis_vukuat.pdf"
     pdf_document.save(output_pdf_path)
     pdf_document.close()
