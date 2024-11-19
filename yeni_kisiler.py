@@ -309,7 +309,7 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'İSMAİL İ. ŞENER',
+     {'isim': 'İ. İLKER ŞENER',
      'init': 'IS',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
