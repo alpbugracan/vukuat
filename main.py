@@ -116,12 +116,12 @@ else:
         else:
             tam_elemanlar = elemanlarr[:]
             mevcut_elemanlar = elemanlarr[:]
-            if ofis == 'FIC':
+            if ofis == 'FIC' or ofis == 'NOTAM':
                 start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:30 UTC'
                 end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 06:00 UTC'
                 start_hour = '16:30 UTC'
                 end_hour = '06:00 UTC'
-            elif ofis == 'NOTAM'or ofis == 'ESB':
+            elif ofis == 'ESB':
                 start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 17:00 UTC'
                 end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 05:30 UTC'
                 start_hour = '17:00 UTC'
@@ -153,12 +153,12 @@ else:
         else:
             tam_elemanlar = elemanlarr[:]
             mevcut_elemanlar = elemanlarr[:]
-            if ofis == 'FIC':
+            if ofis == 'FIC' or ofis == 'NOTAM':
                 start_time = f'{formatted_date} - 16:30 UTC'
                 end_time = f'{formatted_next_day} - 06:00 UTC'
                 start_hour = '16:30 UTC'
                 end_hour = '06:00 UTC'
-            elif ofis == 'NOTAM' or ofis == 'ESB':
+            elif ofis == 'ESB':
                 start_time = f'{formatted_date} - 17:00 UTC'
                 end_time = f'{formatted_next_day} - 05:30 UTC'
                 start_hour = '17:00 UTC'
