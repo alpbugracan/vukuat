@@ -127,9 +127,9 @@ else:
                 start_hour = '17:00 UTC'
                 end_hour = '05:30 UTC'
             else:
-                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 17:00 UTC'
+                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:30 UTC'
                 end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 06:00 UTC'
-                start_hour = '17:00 UTC'
+                start_hour = '16:30 UTC'
                 end_hour = '06:00 UTC'
 
             with col3:
@@ -164,9 +164,9 @@ else:
                 start_hour = '17:00 UTC'
                 end_hour = '05:30 UTC'
             else:
-                start_time = f'{formatted_date} - 17:00 UTC'
+                start_time = f'{formatted_date} - 16:30 UTC'
                 end_time = f'{formatted_next_day} - 06:00 UTC'
-                start_hour = '17:00 UTC'
+                start_hour = '16:30 UTC'
                 end_hour = '06:00 UTC'
 
             with col3:
