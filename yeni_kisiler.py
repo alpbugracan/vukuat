@@ -99,15 +99,7 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'ZEYNEP Y. OCAK',
-     'init': 'ZY',
-     'ofis': 'FIC',
-     'gorev': 'ekip',
-     'ekip' : 'D',
-     'ekipler' : None,
-     'numara' : 5,
-     'uzunisim' : False
-     },
+     
 
      {'isim': 'HACI ÇAKMAK',
      'init': 'HN',
