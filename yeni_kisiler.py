@@ -195,7 +195,7 @@ elemanlar = [
      'init': 'YG',
      'ofis': 'FIC',
      'gorev': 'ekip',
-     'ekip' : 'C',
+     'ekip' : 'D',
      'ekipler' : None,
      'numara' : 5,
      'uzunisim' : False
