@@ -33,7 +33,7 @@ elemanlar = [
      'init': 'VG',
      'ofis': 'FIC',
      'gorev': 'ekip',
-     'ekip' : 'D',
+     'ekip' : 'A',
      'ekipler' : None,
      'numara' : 5,
      'uzunisim' : False
@@ -145,7 +145,7 @@ elemanlar = [
      'init': 'NL',
      'ofis': 'FIC',
      'gorev': 'ekip',
-     'ekip' : 'A',
+     'ekip' : 'D',
      'ekipler' : None,
      'numara' : 5,
      'uzunisim' : False
