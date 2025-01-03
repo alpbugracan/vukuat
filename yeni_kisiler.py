@@ -291,6 +291,16 @@ elemanlar = [
      'uzunisim' : False
      },
 
+      {'isim': 'FATİH KAYALICA',
+     'init': 'FH',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'A',
+     'ekipler' : None,
+     'numara' : 5,
+     'uzunisim' : False
+     },
+
      {'isim': 'SERTAÇ ERCAN',
      'init': 'SE',
      'ofis': 'NOTAM',
@@ -431,15 +441,6 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'FATİH KAYALICA',
-     'init': 'FH',
-     'ofis': 'NOTAM',
-     'gorev': 'ekip',
-     'ekip' : 'D',
-     'ekipler' : None,
-     'numara' : 5,
-     'uzunisim' : False
-     },
     
      {'isim': 'NALAN TÜMER',
      'init': 'NT',
