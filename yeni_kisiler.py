@@ -482,8 +482,9 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'DAMLA ÖZBAKIR',
-     'init': 'DO',
+
+     {'isim': 'UĞRAŞ ÇALIŞKAN',
+     'init': 'UC',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'A',
@@ -492,8 +493,9 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'UĞRAŞ ÇALIŞKAN',
-     'init': 'UC',
+     
+     {'isim': 'YÜKSEL TAK',
+     'init': 'YD',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'A',
@@ -582,8 +584,9 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'YÜKSEL TAK',
-     'init': 'YD',
+
+      {'isim': 'DAMLA ÖZBAKIR',
+     'init': 'DO',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'C',
