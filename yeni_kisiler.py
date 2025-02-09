@@ -100,17 +100,6 @@ elemanlar = [
      },
 
      
-
-     {'isim': 'HACI ÇAKMAK',
-     'init': 'HN',
-     'ofis': 'FIC',
-     'gorev': 'ekip',
-     'ekip' : 'A',
-     'ekipler' : None,
-     'numara' : 1,
-     'uzunisim' : False
-     },
-
      {'isim': 'SEMİH AYKURT',
      'init': 'SS',
      'ofis': 'FIC',
@@ -234,10 +223,10 @@ elemanlar = [
      {'isim': 'ÖZLEM TAŞKIN',
      'init': 'OZ',
      'ofis': 'FIC',
-     'gorev': 'gunasiri',
-     'ekip' : None,
-     'ekipler' : ['B', 'D'],
-     'numara' : None,
+     'gorev': 'ekip',
+     'ekip' : 'A',
+     'ekipler' : None,
+     'numara' : 1,
      'uzunisim' : False
      },
 
