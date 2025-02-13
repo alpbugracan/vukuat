@@ -83,7 +83,7 @@ else:
             
 
     with col1:
-        ofis = st.radio('Ofis', options=['FIC', 'NOTAM', 'AFTN', 'ESB'])
+        ofis = st.radio('Ofis', options=['FIC', 'NOTAM', 'AFTN'])
         
     
     with col2:
@@ -102,9 +102,9 @@ else:
             tam_elemanlar = elemanlarr[:] + gunasiricilar
             mevcut_elemanlar = elemanlarr[:] + gunasiricilar
             start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 05:30 UTC'
-            end_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 17:00 UTC'
+            end_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:45 UTC'
             start_hour = '05:30 UTC'
-            end_hour = '17:00 UTC'
+            end_hour = '16:45 UTC'
 
             with col3:
                 vardiya = st.radio('Normalciler', options=['Var', 'Yok'])
@@ -117,20 +117,20 @@ else:
             tam_elemanlar = elemanlarr[:]
             mevcut_elemanlar = elemanlarr[:]
             if ofis == 'FIC' or ofis == 'NOTAM':
-                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:30 UTC'
-                end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 06:00 UTC'
-                start_hour = '16:30 UTC'
-                end_hour = '06:00 UTC'
-            elif ofis == 'ESB':
-                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 17:00 UTC'
+                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:45 UTC'
                 end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 05:30 UTC'
-                start_hour = '17:00 UTC'
+                start_hour = '16:45 UTC'
+                end_hour = '05:30 UTC'
+            elif ofis == 'ESB':
+                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:45 UTC'
+                end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 05:30 UTC'
+                start_hour = '16:45 UTC'
                 end_hour = '05:30 UTC'
             else:
-                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:30 UTC'
-                end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 06:00 UTC'
-                start_hour = '16:30 UTC'
-                end_hour = '06:00 UTC'
+                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:45 UTC'
+                end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 05:30 UTC'
+                start_hour = '16:45 UTC'
+                end_hour = '05:30 UTC'
 
             with col3:
                 st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
@@ -139,9 +139,9 @@ else:
             tam_elemanlar = elemanlarr[:] + gunasiricilar
             mevcut_elemanlar = elemanlarr[:] + gunasiricilar
             start_time = f'{formatted_date} - 05:30 UTC'
-            end_time = f'{formatted_date} - 17:00 UTC'
+            end_time = f'{formatted_date} - 16:45 UTC'
             start_hour = '05:30 UTC'
-            end_hour = '17:00 UTC'
+            end_hour = '16:45 UTC'
 
             with col3:
                 vardiya = st.radio('Normalciler', options=['Var', 'Yok'])
@@ -154,20 +154,20 @@ else:
             tam_elemanlar = elemanlarr[:]
             mevcut_elemanlar = elemanlarr[:]
             if ofis == 'FIC' or ofis == 'NOTAM':
-                start_time = f'{formatted_date} - 16:30 UTC'
-                end_time = f'{formatted_next_day} - 06:00 UTC'
-                start_hour = '16:30 UTC'
-                end_hour = '06:00 UTC'
-            elif ofis == 'ESB':
-                start_time = f'{formatted_date} - 17:00 UTC'
+                start_time = f'{formatted_date} - 16:45 UTC'
                 end_time = f'{formatted_next_day} - 05:30 UTC'
-                start_hour = '17:00 UTC'
+                start_hour = '16:45 UTC'
+                end_hour = '05:30 UTC'
+            elif ofis == 'ESB':
+                start_time = f'{formatted_date} - 16:45 UTC'
+                end_time = f'{formatted_next_day} - 05:30 UTC'
+                start_hour = '16:45 UTC'
                 end_hour = '05:30 UTC'
             else:
-                start_time = f'{formatted_date} - 16:30 UTC'
-                end_time = f'{formatted_next_day} - 06:00 UTC'
-                start_hour = '16:30 UTC'
-                end_hour = '06:00 UTC'
+                start_time = f'{formatted_date} - 16:45 UTC'
+                end_time = f'{formatted_next_day} - 05:30 UTC'
+                start_hour = '16:45 UTC'
+                end_hour = '05:30 UTC'
 
             with col3:
                 st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
