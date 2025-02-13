@@ -76,6 +76,7 @@ else:
             ileri_gun_gece = st.radio('nöbet', options=['gündüz', 'gece'])
             if ileri_gun_gece == 'gece':
                 ileri_gunduz = False
+                gunduz = False
                 print(ileri_gunduz)
             else:
                 ileri_gunduz = True
