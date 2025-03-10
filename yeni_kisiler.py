@@ -25,7 +25,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'B',
      'ekipler' : None,
-     'numara' : 5,
+     'numara' : 4,
      'uzunisim' : False
      },
 
@@ -45,7 +45,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'B',
      'ekipler' : None,
-     'numara' : 4,
+     'numara' : 3,
      'uzunisim' : False
      },
 
@@ -53,9 +53,9 @@ elemanlar = [
      'init': 'NG',
      'ofis': 'FIC',
      'gorev': 'ekip',
-     'ekip' : 'B',
+     'ekip' : 'C',
      'ekipler' : None,
-     'numara' : 3,
+     'numara' : 5,
      'uzunisim' : False
      },
 
@@ -184,7 +184,7 @@ elemanlar = [
      'init': 'YG',
      'ofis': 'FIC',
      'gorev': 'ekip',
-     'ekip' : 'C',
+     'ekip' : 'B',
      'ekipler' : None,
      'numara' : 5,
      'uzunisim' : False
