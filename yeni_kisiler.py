@@ -232,10 +232,10 @@ elemanlar = [
 
      {'isim': 'ÖZLEM DÖNMEZ',
      'init': 'OD',
-     'ofis': 'FIC',
+     'ofis': 'AFTN',
      'gorev': 'gunasiri',
      'ekip' : None,
-     'ekipler' : ['A', 'C'],
+     'ekipler' : ['B', 'D'],
      'numara' : None,
      'uzunisim' : False
      },
@@ -474,11 +474,11 @@ elemanlar = [
 
      {'isim': 'UĞRAŞ ÇALIŞKAN',
      'init': 'UC',
-     'ofis': 'AFTN',
+     'ofis': 'FIC',
      'gorev': 'ekip',
-     'ekip' : 'A',
+     'ekip' : 'C',
      'ekipler' : None,
-     'numara' : 2,
+     'numara' : 6,
      'uzunisim' : False
      },
 
