@@ -343,10 +343,10 @@ elemanlar = [
      {'isim': 'NİGAR ÜÇÜNCÜ',
      'init': 'NU',
      'ofis': 'NOTAM',
-     'gorev': 'ekip',
-     'ekip' : 'C',
+     'gorev': 'normal',
+     'ekip' : None,
      'ekipler' : None,
-     'numara' : 1,
+     'numara' : 3,
      'uzunisim' : False
      },
 
@@ -356,7 +356,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'C',
      'ekipler' : None,
-     'numara' : 2,
+     'numara' : 1,
      'uzunisim' : False
      },
 
@@ -366,7 +366,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'C',
      'ekipler' : None,
-     'numara' : 3,
+     'numara' : 2,
      'uzunisim' : False
      },
 
@@ -376,7 +376,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'C',
      'ekipler' : None,
-     'numara' : 4,
+     'numara' : 3,
      'uzunisim' : False
      },
 
@@ -386,7 +386,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'C',
      'ekipler' : None,
-     'numara' : 5,
+     'numara' : 4,
      'uzunisim' : False
      },
 
@@ -430,7 +430,16 @@ elemanlar = [
      'uzunisim' : False
      },
 
-    
+      {'isim': 'EGEMEN ÖZSÜER',
+     'init': 'EO',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 5,
+     'uzunisim' : False
+     },
+
      {'isim': 'NALAN TÜMER',
      'init': 'NT',
      'ofis': 'NOTAM',
@@ -604,15 +613,7 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'EGEMEN ÖZSÜER',
-     'init': 'EO',
-     'ofis': 'AFTN',
-     'gorev': 'ekip',
-     'ekip' : 'D',
-     'ekipler' : None,
-     'numara' : 3,
-     'uzunisim' : False
-     },
+    
 
      {'isim': 'İLHAN CİHAN',
      'init': 'IN',
