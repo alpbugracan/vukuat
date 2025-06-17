@@ -481,16 +481,6 @@ elemanlar = [
      },
 
 
-     {'isim': 'UĞRAŞ ÇALIŞKAN',
-     'init': 'UC',
-     'ofis': 'FIC',
-     'gorev': 'ekip',
-     'ekip' : 'C',
-     'ekipler' : None,
-     'numara' : 6,
-     'uzunisim' : False
-     },
-
      
      {'isim': 'YÜKSEL TAK',
      'init': 'YD',
