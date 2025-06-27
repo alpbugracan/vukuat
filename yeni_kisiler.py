@@ -340,15 +340,6 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'NİGAR ÜÇÜNCÜ',
-     'init': 'NU',
-     'ofis': 'NOTAM',
-     'gorev': 'normal',
-     'ekip' : None,
-     'ekipler' : None,
-     'numara' : 3,
-     'uzunisim' : False
-     },
 
      {'isim': 'MUSA AKAR',
      'init': 'MA',
@@ -440,25 +431,6 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'NALAN TÜMER',
-     'init': 'NT',
-     'ofis': 'NOTAM',
-     'gorev': 'normal',
-     'ekip' : None,
-     'ekipler' : None,
-     'numara' : 1,
-     'uzunisim' : False
-     },
-
-     {'isim': 'SEVDA TUNA',
-     'init': 'TS',
-     'ofis': 'NOTAM',
-     'gorev': 'normal',
-     'ekip' : None,
-     'ekipler' : None,
-     'numara' : 2,
-     'uzunisim' : False
-     },
 
      {'isim': 'BERİVAN K. ZEYBEK',
      'init': 'BZ',
