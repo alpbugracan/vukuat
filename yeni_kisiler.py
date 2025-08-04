@@ -156,15 +156,7 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'ARZU YARIKKAŞ',
-     'init': 'AY',
-     'ofis': 'FIC',
-     'gorev': 'ekip',
-     'ekip' : 'C',
-     'ekipler' : None,
-     'numara' : 6,
-     'uzunisim' : False
-     },
+     
 
     # ------------------------ FIC D ------------------------
 
@@ -249,6 +241,16 @@ elemanlar = [
      'ekipler' : None,
      'numara': 3,
      'uzunisim' : False
+     },
+
+     {'isim': 'AYŞEGÜL VAR ÖZGÜR',
+     'init': 'AV',
+     'ofis': 'FIC',
+     'gorev': 'gunasiri',
+     'ekip' : None,
+     'ekipler' : ['A', 'C'],
+     'numara' : None,
+     'uzunisim' : True
      },
 
     
@@ -436,6 +438,8 @@ elemanlar = [
      'uzunisim' : False
      },
 
+     
+
     # ------------------------ NOTAM GUNDUZ ------------------------
 
     {'isim': 'SERPİL CEBECİ ÖZ',
@@ -470,8 +474,10 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'ERSAN KAYA',
-     'init': 'EK',
+     
+
+    {'isim': 'NEVİN BOZLAR',
+     'init': 'NB',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'A',
@@ -480,8 +486,8 @@ elemanlar = [
      'uzunisim' : False
      },
 
-    {'isim': 'NEVİN BOZLAR',
-     'init': 'NB',
+     {'isim': 'İLHAN CİHAN',
+     'init': 'IN',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'A',
@@ -542,6 +548,16 @@ elemanlar = [
      'uzunisim' : False
      },
 
+    {'isim': 'NİHAL KAVLAK',
+     'init': 'NK',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'B',
+     'ekipler' : None,
+     'numara' : 5,
+     'uzunisim' : True
+     },
+
      # ------------------------ AFTN C ------------------------
 
      {'isim': 'TAYFUN GÜNEY',
@@ -598,8 +614,8 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'İLHAN CİHAN',
-     'init': 'IN',
+     {'isim': 'ERSAN KAYA',
+     'init': 'EK',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'D',
@@ -618,14 +634,16 @@ elemanlar = [
      'uzunisim' : True
      },
 
-      {'isim': 'NEVİN KAVLAK',
-     'init': 'NK',
+     
+
+     {'isim': 'ARZU YARIKKAŞ',
+     'init': 'AY',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
      'numara' : 4,
-     'uzunisim' : True
+     'uzunisim' : False
      },
 
      # ------------------------ AFTN GUNDUZ ------------------------
