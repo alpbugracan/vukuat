@@ -156,6 +156,16 @@ elemanlar = [
      'uzunisim' : False
      },
 
+     {'isim': 'AYŞEGÜL VAR ÖZGÜR',
+     'init': 'AV',
+     'ofis': 'FIC',
+     'gorev': 'ekip',
+     'ekip' : 'C',
+     'ekipler' : None,
+     'numara' : 6,
+     'uzunisim' : True
+     },
+
      
 
     # ------------------------ FIC D ------------------------
@@ -243,15 +253,7 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'AYŞEGÜL VAR ÖZGÜR',
-     'init': 'AV',
-     'ofis': 'FIC',
-     'gorev': 'gunasiri',
-     'ekip' : None,
-     'ekipler' : ['A', 'C'],
-     'numara' : None,
-     'uzunisim' : True
-     },
+     
 
     
 
@@ -348,6 +350,16 @@ elemanlar = [
      'ekip' : 'B',
      'ekipler' : None,
      'numara' : 4,
+     'uzunisim' : False
+     },
+
+     {'isim': 'KEMAL KOÇAK',
+     'init': 'KK',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'B',
+     'ekipler' : None,
+     'numara' : 5,
      'uzunisim' : False
      },
 
