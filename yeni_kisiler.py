@@ -220,6 +220,16 @@ elemanlar = [
      'uzunisim' : False
      },
 
+     {'isim': 'ZEYNEP YALÇINSOY OCAK',
+     'init': 'ZY',
+     'ofis': 'FIC',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 6,
+     'uzunisim' : True
+     },
+
      
     # ------------------------ FIC GUNDUZ ------------------------
 
