@@ -82,10 +82,8 @@ if st.session_state.dogrulandi:
             if ileri_gun_gece == 'gece':
                 ileri_gunduz = False
                 gunduz = False
-                print(ileri_gunduz)
             else:
                 ileri_gunduz = True
-                print(ileri_gunduz)
             
 
     with col1:
@@ -187,13 +185,13 @@ if st.session_state.dogrulandi:
                                         'ÖLÜM İZİNLİ'], key=f"{eleman['init']}_{eleman['isim']}_sebep")
                     if sebep == 'SAATLİK İZİNLİ':
                         
-                        ccol1, ccol2 = st.columns(2) 
+                        ccol1, ccol2 = st.columns(2)
                         with ccol1:
                             #izin_baslangic = st.text_input('başlangıç', key=f'{eleman['isim']}_{eleman['init']}_basla')
-                            izin_baslangic = st.time_input('başlangıç', value=time(12,0))
+                            izin_baslangic = st.time_input('başlangıç', value=time(12,0), key=f'{eleman["isim"]}_{eleman["init"]}_basla_time')
                         with ccol2:
                             #izin_bitis = st.text_input('bitiş       UTC', key=f'{eleman['isim']}_{eleman['init']}_bitis')
-                            izin_bitis = st.time_input('bitiş   UTC', value=time(12,0))
+                            izin_bitis = st.time_input('bitiş   UTC', value=time(12,0), key=f'{eleman["isim"]}_{eleman["init"]}_bitis_time')
                         sebepler.append(f'{sebep} {izin_baslangic.strftime("%H:%M")} - {izin_bitis.strftime("%H:%M")}')
                     else:
                         mevcut_elemanlar.remove(eleman)
@@ -323,10 +321,18 @@ if st.session_state.dogrulandi:
         print_date = ileri_tarih.strftime("%d/%m/%Y")
 
     zaman = ''
-    if gunduz or ileri_gunduz:
-        zaman = 'Gunduz'
+    if st.session_state.ileri:
+        # Manuel tarih seçiminde ileri_gunduz değerine bak
+        if ileri_gunduz:
+            zaman = 'Gunduz'
+        else:
+            zaman = 'Gece'
     else:
-        zaman = 'Gece'
+        # Otomatik modda gunduz değerine bak
+        if gunduz:
+            zaman = 'Gunduz'
+        else:
+            zaman = 'Gece'
 
 
     with open(output_pdf_path, "rb") as pdf_file:
