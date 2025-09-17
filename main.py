@@ -30,14 +30,19 @@ if "dogrulandi" not in st.session_state:
     st.session_state.dogrulandi = False
 
 if not st.session_state.dogrulandi:
-    sifre = st.text_input("Lütfen şifreyi girin:", type="password")
+    with st.form("login_form"):
+        sifre = st.text_input("Lütfen şifreyi girin:", type="password")
+        submit_button = st.form_submit_button("Giriş Yap")
 
-    if sifre == SIFRE:
-        st.session_state.dogrulandi = True
-        st.success("Şifre doğru! İçeriği yüklemek için buraya tıklayın.")
-    elif sifre:
-        st.error("Yanlış şifre! Tekrar deneyin.")
-else:
+        if submit_button and sifre == SIFRE:
+            st.session_state.dogrulandi = True
+            st.success("Şifre doğru! İçerik yükleniyor...")
+            st.rerun()
+        elif submit_button and sifre:
+            st.error("Yanlış şifre! Tekrar deneyin.")
+    st.stop()  # Şifre doğru değilse burada dur
+
+if st.session_state.dogrulandi:
 
     col1, col2, col3, col4 = st.columns([2.4,3,3.2,2])
 
@@ -117,21 +122,10 @@ else:
         else:
             tam_elemanlar = elemanlarr[:]
             mevcut_elemanlar = elemanlarr[:]
-            if ofis == 'FIC' or ofis == 'NOTAM':
-                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:45 UTC'
-                end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 05:30 UTC'
-                start_hour = '16:45 UTC'
-                end_hour = '05:30 UTC'
-            elif ofis == 'ESB':
-                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:45 UTC'
-                end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 05:30 UTC'
-                start_hour = '16:45 UTC'
-                end_hour = '05:30 UTC'
-            else:
-                start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:45 UTC'
-                end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 05:30 UTC'
-                start_hour = '16:45 UTC'
-                end_hour = '05:30 UTC'
+            start_time = f'{ileri_tarih.strftime("%d/%m/%Y")} - 16:45 UTC'
+            end_time = f'{(ileri_tarih + timedelta(days=1)).strftime("%d/%m/%Y")} - 05:30 UTC'
+            start_hour = '16:45 UTC'
+            end_hour = '05:30 UTC'
 
             with col3:
                 st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
@@ -154,21 +148,10 @@ else:
         else:
             tam_elemanlar = elemanlarr[:]
             mevcut_elemanlar = elemanlarr[:]
-            if ofis == 'FIC' or ofis == 'NOTAM':
-                start_time = f'{formatted_date} - 16:45 UTC'
-                end_time = f'{formatted_next_day} - 05:30 UTC'
-                start_hour = '16:45 UTC'
-                end_hour = '05:30 UTC'
-            elif ofis == 'ESB':
-                start_time = f'{formatted_date} - 16:45 UTC'
-                end_time = f'{formatted_next_day} - 05:30 UTC'
-                start_hour = '16:45 UTC'
-                end_hour = '05:30 UTC'
-            else:
-                start_time = f'{formatted_date} - 16:45 UTC'
-                end_time = f'{formatted_next_day} - 05:30 UTC'
-                start_hour = '16:45 UTC'
-                end_hour = '05:30 UTC'
+            start_time = f'{formatted_date} - 16:45 UTC'
+            end_time = f'{formatted_next_day} - 05:30 UTC'
+            start_hour = '16:45 UTC'
+            end_hour = '05:30 UTC'
 
             with col3:
                 st.write('<div style="height:100px;"></div>', unsafe_allow_html=True) 
@@ -247,26 +230,18 @@ else:
     page.draw_rect((delx11, dely11, delx22, dely22), color=(1, 1, 1), fill=(1, 1, 1))
 
 
-    if ofis == 'ESB':
-        htkm = 'ESENBOĞA'
-        x_htkm = 240
-    else:
-        htkm = 'HTKM'
-        x_htkm = 255
+    htkm = 'HTKM'
+    x_htkm = 255
     y_htkm = 90  
     page.insert_text((x_htkm, y_htkm), htkm, fontsize=14, fontname="Calibrib", fontfile = font_path_bold,color=(0, 0, 0))
 
-    if ofis == 'ESB':
-        aim_ofis = 'AIM'
-        x_fic = 447
-    else:    
-        aim_ofis = f'AIM/{ofis}'
-        if ofis == 'FIC':
-            x_fic = 433
-        elif ofis == 'NOTAM':
-            x_fic = 424
-        else:
-            x_fic = 428
+    aim_ofis = f'AIM/{ofis}'
+    if ofis == 'FIC':
+        x_fic = 433
+    elif ofis == 'NOTAM':
+        x_fic = 424
+    else:
+        x_fic = 428
     
     y_fic = 90  
     page.insert_text((x_fic, y_fic), aim_ofis, fontsize=12, fontname="Calibrib", fontfile = font_path_bold, color=(0, 0, 0))
@@ -338,14 +313,6 @@ else:
     x = 25
     y = 727
     page2.insert_text((x, y), ekip_sefi, fontsize=14, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
-
-    if ofis == 'ESB':
-        x_sef = 25
-        y_sef = 790
-        x_mudur = 293
-        y_mudur = 790
-        page2.insert_text((x_sef, y_sef), 'YAVUZ USTA', fontsize=14, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
-        page2.insert_text((x_mudur, y_mudur), 'ENVER YERLİ', fontsize=14, fontname="Calibri", fontfile = font_path,color=(0, 0, 0))
 
     output_pdf_path = "guncellenmis_vukuat.pdf"
     pdf_document.save(output_pdf_path)
