@@ -418,15 +418,6 @@ elemanlar = [
 
     # ------------------------ NOTAM D ------------------------
 
-     {'isim': 'HÜSEYİN YILDIZ',
-     'init': 'HZ',
-     'ofis': 'NOTAM',
-     'gorev': 'ekip',
-     'ekip' : 'D',
-     'ekipler' : None,
-     'numara' : 1,
-     'uzunisim' : False
-     },
 
     {'isim': 'NESLİHAN O. ÇAKMAK',
      'init': 'NO',
@@ -434,7 +425,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 2,
+     'numara' : 1,
      'uzunisim' : False
      },
 
@@ -444,7 +435,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 3,
+     'numara' : 2,
      'uzunisim' : False
      },
 
@@ -456,7 +447,27 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
+     'numara' : 3,
+     'uzunisim' : False
+     },
+
+     {'isim': 'MERVE YÖRÜK',
+     'init': 'MY',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
      'numara' : 4,
+     'uzunisim' : False
+     },
+
+     {'isim': 'ORHAN BADEM',
+     'init': 'OB',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 5,
      'uzunisim' : False
      },
 
