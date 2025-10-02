@@ -104,6 +104,16 @@ elemanlar = [
      'uzunisim' : False
      },
 
+     {'isim': 'ÖMER IŞIK',
+     'init': 'OI',
+     'ofis': 'FIC',
+     'gorev': 'ekip',
+     'ekip' : 'B',
+     'ekipler' : None,
+     'numara' : 6,
+     'uzunisim' : False
+     },
+
     # ------------------------ FIC C ------------------------
 
     {'isim': 'VOLKAN BİLGİN',
@@ -321,15 +331,6 @@ elemanlar = [
 
      # ------------------------ NOTAM B ------------------------
 
-     {'isim': 'SERTAÇ ERCAN',
-     'init': 'SE',
-     'ofis': 'NOTAM',
-     'gorev': 'ekip',
-     'ekip' : 'B',
-     'ekipler' : None,
-     'numara' : 1,
-     'uzunisim' : False
-     },
 
      {'isim': 'İ. İLKER ŞENER',
      'init': 'IS',
@@ -337,7 +338,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'B',
      'ekipler' : None,
-     'numara' : 2,
+     'numara' : 1,
      'uzunisim' : False
      },
 
@@ -347,7 +348,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'B',
      'ekipler' : None,
-     'numara' : 3,
+     'numara' : 2,
      'uzunisim' : False
      },
 
@@ -355,6 +356,16 @@ elemanlar = [
 
      {'isim': 'HALİT Ç. KARATAŞ',
      'init': 'HK',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'B',
+     'ekipler' : None,
+     'numara' : 3,
+     'uzunisim' : False
+     },
+
+     {'isim': 'EGEMEN ÖZSÜER',
+     'init': 'EO',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'B',
@@ -416,8 +427,27 @@ elemanlar = [
      'uzunisim' : False
      },
 
+     {'isim': 'MERVE YÖRÜK',
+     'init': 'MY',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'C',
+     'ekipler' : None,
+     'numara' : 5,
+     'uzunisim' : False
+     },
+
     # ------------------------ NOTAM D ------------------------
 
+    {'isim': 'SERTAÇ ERCAN',
+     'init': 'SE',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 1,
+     'uzunisim' : False
+     },
 
     {'isim': 'NESLİHAN O. ÇAKMAK',
      'init': 'NO',
@@ -425,7 +455,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 1,
+     'numara' : 2,
      'uzunisim' : False
      },
 
@@ -435,24 +465,13 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 2,
-     'uzunisim' : False
-     },
-
-   
-
-    {'isim': 'EGEMEN ÖZSÜER',
-     'init': 'EO',
-     'ofis': 'NOTAM',
-     'gorev': 'ekip',
-     'ekip' : 'D',
-     'ekipler' : None,
      'numara' : 3,
      'uzunisim' : False
      },
 
-     {'isim': 'MERVE YÖRÜK',
-     'init': 'MY',
+   
+     {'isim': 'ORHAN BADEM',
+     'init': 'OB',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'D',
@@ -461,8 +480,8 @@ elemanlar = [
      'uzunisim' : False
      },
 
-     {'isim': 'ORHAN BADEM',
-     'init': 'OB',
+     {'isim': 'EMRAH GÜÇLÜ',
+     'init': 'EG',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'D',
@@ -536,6 +555,16 @@ elemanlar = [
      'ekip' : 'A',
      'ekipler' : None,
      'numara' : 4,
+     'uzunisim' : False
+     },
+
+     {'isim': 'SALİH YILMAZ',
+     'init': 'SY',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'A',
+     'ekipler' : None,
+     'numara' : 5,
      'uzunisim' : False
      },
 
