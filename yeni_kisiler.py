@@ -11,6 +11,16 @@ elemanlar = [
      'numara' : 1,
      'uzunisim' : False
     },
+
+    {'isim': 'HACI ÇAKMAK',
+     'init': 'HC',
+     'ofis': 'FIC',
+     'gorev': 'ekip',
+     'ekip' : 'A',
+     'ekipler' : None,
+     'numara' : 2,
+     'uzunisim' : False
+    },
      
     {'isim': 'SEMİH AYKURT',
      'init': 'SS',
@@ -18,7 +28,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'A',
      'ekipler' : None,
-     'numara' : 2,
+     'numara' : 3,
      'uzunisim' : False
     },
 
@@ -28,7 +38,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'A',
      'ekipler' : None,
-     'numara' : 3,
+     'numara' : 4,
      'uzunisim' : False
     },
 
@@ -38,7 +48,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'A',
      'ekipler' : None,
-     'numara' : 4,
+     'numara' : 5,
      'uzunisim' : False
     },
 
@@ -48,7 +58,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'A',
      'ekipler' : None,
-     'numara' : 5,
+     'numara' : 6,
      'uzunisim' : False
     },
 
@@ -189,23 +199,13 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'HAKAN ŞAHİNER',
-     'init': 'HS',
-     'ofis': 'FIC',
-     'gorev': 'ekip',
-     'ekip' : 'D',
-     'ekipler' : None,
-     'numara' : 4,
-     'uzunisim' : False
-    },
-
     {'isim': 'NURGÜL BAYSAL',
      'init': 'NL',
      'ofis': 'FIC',
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 5,
+     'numara' : 4,
      'uzunisim' : False
     },
 
@@ -215,7 +215,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 6,
+     'numara' : 5,
      'uzunisim' : True
     },
 
