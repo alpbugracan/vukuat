@@ -2,8 +2,8 @@ elemanlar = [
 
     # ------------------------ FIC A ------------------------
 
-    {'isim': 'ÖZLEM TAŞKIN',
-     'init': 'OZ',
+     {'isim': 'HACI ÇAKMAK',
+     'init': 'HC',
      'ofis': 'FIC',
      'gorev': 'ekip',
      'ekip' : 'A',
@@ -12,8 +12,8 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'HACI ÇAKMAK',
-     'init': 'HC',
+    {'isim': 'ÖZLEM TAŞKIN',
+     'init': 'OZ',
      'ofis': 'FIC',
      'gorev': 'ekip',
      'ekip' : 'A',
@@ -52,15 +52,6 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'VAHAP GÜNBATTI',
-     'init': 'VG',
-     'ofis': 'FIC',
-     'gorev': 'ekip',
-     'ekip' : 'A',
-     'ekipler' : None,
-     'numara' : 6,
-     'uzunisim' : False
-    },
 
      # ------------------------ FIC B ------------------------
 
@@ -217,6 +208,16 @@ elemanlar = [
      'ekipler' : None,
      'numara' : 5,
      'uzunisim' : True
+    },
+
+    {'isim': 'VAHAP GÜNBATTI',
+     'init': 'VG',
+     'ofis': 'FIC',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 6,
+     'uzunisim' : False
     },
 
      
