@@ -180,15 +180,6 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'ŞEYDA A. BİÇER',
-     'init': 'SA',
-     'ofis': 'FIC',
-     'gorev': 'ekip',
-     'ekip' : 'D',
-     'ekipler' : None,
-     'numara' : 3,
-     'uzunisim' : False
-    },
 
     {'isim': 'NURGÜL BAYSAL',
      'init': 'NL',
@@ -196,7 +187,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 4,
+     'numara' : 3,
      'uzunisim' : False
     },
 
@@ -206,7 +197,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 5,
+     'numara' : 4,
      'uzunisim' : True
     },
 
@@ -216,7 +207,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 6,
+     'numara' : 5,
      'uzunisim' : False
     },
 
@@ -260,6 +251,16 @@ elemanlar = [
      'ekip' : None,
      'ekipler' : None,
      'numara' : 4,
+     'uzunisim' : False
+    },
+
+    {'isim': 'ŞEYDA A. BİÇER',
+     'init': 'SA',
+     'ofis': 'FIC',
+     'gorev': 'normal',
+     'ekip' : None,
+     'ekipler' : None,
+     'numara' : 5,
      'uzunisim' : False
     },
 
