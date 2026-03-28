@@ -381,23 +381,13 @@ elemanlar = [
     },
 
 
-    {'isim': 'AYŞE E. ŞAHİNER',
-     'init': 'AY',
-     'ofis': 'NOTAM',
-     'gorev': 'ekip',
-     'ekip' : 'C',
-     'ekipler' : None,
-     'numara' : 2,
-     'uzunisim' : False
-    },
-
     {'isim': 'İBRAHİM YOLDAŞ',
      'init': 'IY',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'C',
      'ekipler' : None,
-     'numara' : 3,
+     'numara' : 2,
      'uzunisim' : False
     },
 
@@ -407,7 +397,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'C',
      'ekipler' : None,
-     'numara' : 4,
+     'numara' : 3,
      'uzunisim' : False
     },
 
@@ -417,7 +407,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'C',
      'ekipler' : None,
-     'numara' : 5,
+     'numara' : 4,
      'uzunisim' : False
     },
 
@@ -505,6 +495,16 @@ elemanlar = [
      'gorev': 'gunasiri',
      'ekip' : None,
      'ekipler' : ['A', 'C'],
+     'numara' : None,
+     'uzunisim' : False
+    },
+
+    {'isim': 'AYŞE E. ŞAHİNER',
+     'init': 'AY',
+     'ofis': 'NOTAM',
+     'gorev': 'gunasiri',
+     'ekip' : None,
+     'ekipler' : ['B', 'D'],
      'numara' : None,
      'uzunisim' : False
     },
