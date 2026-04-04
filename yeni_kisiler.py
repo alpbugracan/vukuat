@@ -180,6 +180,15 @@ elemanlar = [
      'uzunisim' : False
     },
 
+    {'isim': 'ZEYNEP YALÇINSOY OCAK',
+     'init': 'ZY',
+     'ofis': 'FIC',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 3,
+     'uzunisim' : True
+    },
 
     {'isim': 'NURGÜL BAYSAL',
      'init': 'NL',
@@ -187,18 +196,8 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 3,
-     'uzunisim' : False
-    },
-
-    {'isim': 'ZEYNEP YALÇINSOY OCAK',
-     'init': 'ZY',
-     'ofis': 'FIC',
-     'gorev': 'ekip',
-     'ekip' : 'D',
-     'ekipler' : None,
      'numara' : 4,
-     'uzunisim' : True
+     'uzunisim' : False
     },
 
     {'isim': 'VAHAP GÜNBATTI',
@@ -286,8 +285,10 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'RAMAZAN GÖNEN',
-     'init': 'RG',
+    
+
+    {'isim': 'YASİN BİÇER',
+     'init': 'YB',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'A',
@@ -296,8 +297,8 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'YASİN BİÇER',
-     'init': 'YB',
+    {'isim': 'BURAK IŞITAN',
+     'init': 'BI',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'A',
@@ -380,9 +381,8 @@ elemanlar = [
      'uzunisim' : False
     },
 
-
-    {'isim': 'İBRAHİM YOLDAŞ',
-     'init': 'IY',
+    {'isim': 'RAMAZAN GÖNEN',
+     'init': 'RG',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'C',
@@ -391,8 +391,9 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'EDA IŞIK',
-     'init': 'ED',
+
+    {'isim': 'İBRAHİM YOLDAŞ',
+     'init': 'IY',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'C',
@@ -401,8 +402,8 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'BURAK IŞITAN',
-     'init': 'BI',
+    {'isim': 'EDA IŞIK',
+     'init': 'ED',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'C',
@@ -578,8 +579,8 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'BÜLENT BALCI',
-     'init': 'BB',
+    {'isim': 'ÖZLEM DÖNMEZ',
+     'init': 'OD',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'B',
@@ -588,8 +589,8 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'ARZU YARIKKAŞ',
-     'init': 'AY',
+    {'isim': 'BÜLENT BALCI',
+     'init': 'BB',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'B',
@@ -597,6 +598,7 @@ elemanlar = [
      'numara' : 4,
      'uzunisim' : False
     },
+
 
  
 
@@ -690,15 +692,7 @@ elemanlar = [
 
      # ------------------------ AFTN GUNDUZ ------------------------
 
-    {'isim': 'ÖZLEM DÖNMEZ',
-     'init': 'OD',
-     'ofis': 'AFTN',
-     'gorev': 'gunasiri',
-     'ekip' : None,
-     'ekipler' : ['B', 'D'],
-     'numara' : None,
-     'uzunisim' : False
-    },
+    
 
     {'isim': 'NİLGÜN KOÇ',
      'init': 'NK',
@@ -725,7 +719,7 @@ elemanlar = [
      'ofis': 'AFTN',
      'gorev': 'gunasiri',
      'ekip' : None,
-     'ekipler' : ['A', 'C'],
+     'ekipler' : ['B', 'D'],
      'numara' : None,
      'uzunisim' : False
     },   
