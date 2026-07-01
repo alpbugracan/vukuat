@@ -243,25 +243,6 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'CANSU N. B. AYKURT',
-     'init': 'CS',
-     'ofis': 'FIC',
-     'gorev': 'normal',
-     'ekip' : None,
-     'ekipler' : None,
-     'numara' : 4,
-     'uzunisim' : False
-    },
-
-    {'isim': 'ŞEYDA A. BİÇER',
-     'init': 'SA',
-     'ofis': 'FIC',
-     'gorev': 'normal',
-     'ekip' : None,
-     'ekipler' : None,
-     'numara' : 5,
-     'uzunisim' : False
-    },
 
     # ------------------------ NOTAM A ------------------------
 
@@ -412,6 +393,16 @@ elemanlar = [
      'uzunisim' : False
     },
 
+    {'isim': 'MERVE YÖRÜK',
+     'init': 'MY',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'C',
+     'ekipler' : None,
+     'numara' : 5,
+     'uzunisim' : False
+    },
+
     
 
     # ------------------------ NOTAM D ------------------------
@@ -466,6 +457,16 @@ elemanlar = [
      'uzunisim' : False
     },
 
+    {'isim': 'ERSAN KAYA',
+     'init': 'EK',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 6,
+     'uzunisim' : False
+    },
+
      
 
     # ------------------------ NOTAM GUNDUZ ------------------------
@@ -480,15 +481,7 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'MERVE YÖRÜK',
-     'init': 'MY',
-     'ofis': 'NOTAM',
-     'gorev': 'normal',
-     'ekip' : None,
-     'ekipler' : None,
-     'numara' : 2,
-     'uzunisim' : False
-    },
+    
 
     {'isim': 'BERİVAN K. ZEYBEK',
      'init': 'BZ',
@@ -532,8 +525,9 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'İLHAN CİHAN',
-     'init': 'IN',
+
+    {'isim': 'DAMLA ÖZBAKIR',
+     'init': 'DO',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'A',
@@ -542,8 +536,8 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'DAMLA ÖZBAKIR',
-     'init': 'DO',
+     {'isim': 'UĞRAŞ ÇALIŞKAN',
+     'init': 'UC',
      'ofis': 'AFTN',
      'gorev': 'ekip',
      'ekip' : 'A',
@@ -657,15 +651,7 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'ERSAN KAYA',
-     'init': 'EK',
-     'ofis': 'AFTN',
-     'gorev': 'ekip',
-     'ekip' : 'D',
-     'ekipler' : None,
-     'numara' : 2,
-     'uzunisim' : False
-    },
+    
 
     {'isim': 'ASLI K. DANACIOĞLU',
      'init': 'AK',
@@ -673,7 +659,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 3,
+     'numara' : 2,
      'uzunisim' : True
     },
 
@@ -683,7 +669,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'D',
      'ekipler' : None,
-     'numara' : 4,
+     'numara' : 3,
      'uzunisim' : False
     },
      
