@@ -458,7 +458,7 @@ elemanlar = [
     },
 
     {'isim': 'ERSAN KAYA',
-     'init': 'EK',
+     'init': 'ER',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'D',
