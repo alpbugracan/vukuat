@@ -52,6 +52,16 @@ elemanlar = [
      'uzunisim' : False
     },
 
+    {'isim': 'HAKAN ŞAHİNER',
+     'init': 'HS',
+     'ofis': 'FIC',
+     'gorev': 'ekip',
+     'ekip' : 'A',
+     'ekipler' : None,
+     'numara' : 6,
+     'uzunisim' : False
+    },
+
 
      # ------------------------ FIC B ------------------------
 
@@ -102,6 +112,16 @@ elemanlar = [
      'ekip' : 'B',
      'ekipler' : None,
      'numara' : 5,
+     'uzunisim' : False
+    },
+
+    {'isim': 'EMRE YUMUŞ',
+     'init': 'EU',
+     'ofis': 'FIC',
+     'gorev': 'ekip',
+     'ekip' : 'B',
+     'ekipler' : None,
+     'numara' : 6,
      'uzunisim' : False
     },
 
@@ -298,6 +318,17 @@ elemanlar = [
      'uzunisim' : False
     },
 
+    {'isim': 'OSMAN TOZLU',
+     'init': 'OT',
+     'ofis': 'NOTAM',
+     'gorev': 'ekip',
+     'ekip' : 'A',
+     'ekipler' : None,
+     'numara' : 6,
+     'uzunisim' : False
+    },
+
+
      # ------------------------ NOTAM B ------------------------
 
     {'isim': 'İ. İLKER ŞENER',
@@ -437,8 +468,8 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'FATİH KAYALICA',
-     'init': 'FH',
+    {'isim': 'AYŞE E. ŞAHİNER',
+     'init': 'AY',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'D',
@@ -447,8 +478,8 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'EMRAH GÜÇLÜ',
-     'init': 'EG',
+    {'isim': 'FATİH KAYALICA',
+     'init': 'FH',
      'ofis': 'NOTAM',
      'gorev': 'ekip',
      'ekip' : 'D',
@@ -482,7 +513,6 @@ elemanlar = [
     },
 
     
-
     {'isim': 'BERİVAN K. ZEYBEK',
      'init': 'BZ',
      'ofis': 'NOTAM',
@@ -493,8 +523,9 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'AYŞE E. ŞAHİNER',
-     'init': 'AY',
+    
+    {'isim': 'EMRAH GÜÇLÜ',
+     'init': 'EG',
      'ofis': 'NOTAM',
      'gorev': 'gunasiri',
      'ekip' : None,
@@ -651,8 +682,6 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    
-
     {'isim': 'ASLI K. DANACIOĞLU',
      'init': 'AK',
      'ofis': 'AFTN',
@@ -670,6 +699,16 @@ elemanlar = [
      'ekip' : 'D',
      'ekipler' : None,
      'numara' : 3,
+     'uzunisim' : False
+    },
+
+    {'isim': 'AZİZ BULUT',
+     'init': 'AZ',
+     'ofis': 'AFTN',
+     'gorev': 'ekip',
+     'ekip' : 'D',
+     'ekipler' : None,
+     'numara' : 4,
      'uzunisim' : False
     },
      
