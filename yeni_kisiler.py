@@ -85,15 +85,6 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'AYŞEGÜL VAR ÖZGÜR',
-     'init': 'AV',
-     'ofis': 'FIC',
-     'gorev': 'ekip',
-     'ekip' : 'B',
-     'ekipler' : None,
-     'numara' : 3,
-     'uzunisim' : False
-    },
 
     {'isim': 'ALP BUĞRA CAN',
      'init': 'AB',
@@ -101,7 +92,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'B',
      'ekipler' : None,
-     'numara' : 4,
+     'numara' : 3,
      'uzunisim' : False
     },
 
@@ -111,7 +102,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'B',
      'ekipler' : None,
-     'numara' : 5,
+     'numara' : 4,
      'uzunisim' : False
     },
 
@@ -121,7 +112,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'B',
      'ekipler' : None,
-     'numara' : 6,
+     'numara' : 5,
      'uzunisim' : False
     },
 
