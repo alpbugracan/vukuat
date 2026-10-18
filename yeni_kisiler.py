@@ -201,7 +201,7 @@ elemanlar = [
      'uzunisim' : True
     },
 
-    {'isim': 'NURGÜL BAYSAL',
+    {'isim': 'NURGÜL BAYSAL ÖZTÜRK',
      'init': 'NL',
      'ofis': 'FIC',
      'gorev': 'ekip',
