@@ -208,7 +208,7 @@ elemanlar = [
      'ekip' : 'D',
      'ekipler' : None,
      'numara' : 4,
-     'uzunisim' : False
+     'uzunisim' : True
     },
 
     {'isim': 'VAHAP GÜNBATTI',
