@@ -22,15 +22,6 @@ elemanlar = [
      'uzunisim' : False
     },
      
-    {'isim': 'SEMİH AYKURT',
-     'init': 'SS',
-     'ofis': 'FIC',
-     'gorev': 'ekip',
-     'ekip' : 'A',
-     'ekipler' : None,
-     'numara' : 3,
-     'uzunisim' : False
-    },
 
     {'isim': 'ÖZGÜL ERCAN',
      'init': 'OE',
@@ -38,7 +29,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'A',
      'ekipler' : None,
-     'numara' : 4,
+     'numara' : 3,
      'uzunisim' : False
     },
 
@@ -48,7 +39,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'A',
      'ekipler' : None,
-     'numara' : 5,
+     'numara' : 4,
      'uzunisim' : False
     },
 
@@ -58,7 +49,7 @@ elemanlar = [
      'gorev': 'ekip',
      'ekip' : 'A',
      'ekipler' : None,
-     'numara' : 6,
+     'numara' : 5,
      'uzunisim' : False
     },
 
@@ -181,8 +172,8 @@ elemanlar = [
      'uzunisim' : False
     },
 
-    {'isim': 'DAVUT GÖNEN',
-     'init': 'DG',
+    {'isim': 'SEMİH AYKURT',
+     'init': 'SS',
      'ofis': 'FIC',
      'gorev': 'ekip',
      'ekip' : 'D',
@@ -190,6 +181,8 @@ elemanlar = [
      'numara' : 2,
      'uzunisim' : False
     },
+
+  
 
     {'isim': 'ZEYNEP YALÇINSOY OCAK',
      'init': 'ZY',
@@ -224,8 +217,8 @@ elemanlar = [
      
     # ------------------------ FIC GUNDUZ ------------------------
 
-    {'isim': 'RIZA YAŞAR',
-     'init': 'RY',
+      {'isim': 'DAVUT GÖNEN',
+     'init': 'DG',
      'ofis': 'FIC',
      'gorev': 'normal',
      'ekip' : None,
